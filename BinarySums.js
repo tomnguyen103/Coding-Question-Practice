@@ -4,33 +4,34 @@ class BinaryTree {
         this.left = null;
         this.right = null;
     }
-    insert(values, i = 0) {
-        if (i >= values.length) return;
-        const queue = [this];
-        while (queue.length > 0) {
-            let current = queue.shift();
-            if (current.left === null) {
-                current.left = new BinaryTree(values[i]);
-                break;
-            }
-            queue.push(current.left);
-            if (current.right === null) {
-                current.right = new BinaryTree(values[i]);
-                break;
-            }
-            queue.push(current.right);
-        }
-        this.insert(values, i + 1);
-        return this;
-    }
 }
 
 function branchSums(root) {
-    // Write your code here.
-    
-
+    let sums = [];
+    calculateSums(root,0,sums);
+    return sums;
 }
 
-const g = new BinaryTree(1).insert([2]);
+function calculateSums(node, runningSum, sums){
+    if(!node) return;
+
+    let newRunningSum = runningSum + node.value;
+    if(!node.left && !node.right){
+        sums.push(newRunningSum);
+        return;
+    }
+
+    calculateSums(node.left,newRunningSum,sums);
+    calculateSums(node.right, newRunningSum, sums);
+}
+
+const g = new BinaryTree(1);
+g.left = new BinaryTree(9);
+g.right = new BinaryTree(10);
+g.left.right = new BinaryTree(2);
+g.left.left = new BinaryTree(11);
+g.right.right = new BinaryTree(20);
+g.right.left = new BinaryTree(59);
+g.right.right.right = new BinaryTree(15);
 
 console.log(branchSums(g));
