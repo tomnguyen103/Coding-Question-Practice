@@ -10,19 +10,21 @@
 
 // O(n) time | O(1) space
 function isPalindrome(string){
+    if(string=="") return "String is empty.";
+    let str = string.replace(/[^a-z0-9]/gi,"").toLowerCase();
+    console.log(str);
     let i = 0;
-    let j = string.length-1;
-    let middle = Math.floor(string.length/2);
-    while (i<=middle){
-        if(string[i]==string[j]){
-            return true;
-        }else{
-            i++;
-            j--;
+    let j = str.length-1;
+    while (i<j){
+        if(str[i]!==str[j]){
+            return string + " is not palindrome.";
         }
-        return false;
+        i++;
+        j--;
     }
+    return string + " is palindrome.";
 }
-
-console.log(isPalindrome("abcdcba"));
-console.log(isPalindrome("alexi"));
+console.log(isPalindrome("02-02-2020"));
+console.log(isPalindrome("03-02-2020"));
+console.log(isPalindrome("A man, a plan, a canal: Panama"));
+console.log(isPalindrome(""));
