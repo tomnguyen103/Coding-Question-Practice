@@ -1,4 +1,12 @@
-public int mySqrt(int x) {
+
+public class squareX {
+    public static void main(String[] args) {
+        int number = 35;
+        int answer = mySqrt(number);
+        System.out.println("Square root of " + number + " in whole number is " + answer);
+    }
+
+    public static int mySqrt(int x) {
         if(x<2){
             return x;
         }
@@ -19,3 +27,4 @@ public int mySqrt(int x) {
         }
         return right;
     }
+}
