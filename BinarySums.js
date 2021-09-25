@@ -34,4 +34,5 @@ g.right.right = new BinaryTree(20);
 g.right.left = new BinaryTree(59);
 g.right.right.right = new BinaryTree(15);
 
+console.log(g);
 console.log(branchSums(g));

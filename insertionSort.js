@@ -6,8 +6,8 @@ function insertionSort(array){
         // console.log(j);
         // console.log(array[j]);
         while(j>0 && array[j]< array[j-1]){
-            console.log(array[j]);
-            console.log(array[j-1])
+            // console.log(array[j]);
+            // console.log(array[j-1]);
             swap(j,j-1,array);
             j-=1;
         }
