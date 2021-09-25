@@ -1,0 +1,3 @@
+function findLongestSubarrayBySum(s, array){
+    
+}

@@ -17,7 +17,7 @@ class Node {
         }
         return array;
     }
-}
+}   
 
 const g = new Node('A');
 g.addChild('B').addChild('C').addChild('D');
@@ -25,5 +25,8 @@ g.children[0].addChild('E').addChild('F');
 g.children[1].addChild('G').addChild('H').addChild('I');
 g.children[2].addChild('J').addChild('K');
 
+<<<<<<< HEAD
 console.log(g);
+=======
+>>>>>>> a37f730c8a95897f5527e541d1435c2ae9612f72
 console.log(g.depthFirstSearch([]));
